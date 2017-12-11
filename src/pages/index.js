@@ -5,11 +5,11 @@ const IndexPage = ({data}) => {
 	const { edges: posts } = data.allMarkdownRemark
 	return (
 		  <div>
-		  	{posts.map(({node: post}) => {
+		  	{posts.map(({node: post}, idx) => {
 		  		const { frontmatter } = post
 
 		  		return (
-		  			<div>
+		  			<div key={idx}>
 		  				<h2>
 		  					<Link to={frontmatter.path}>
 		  						{frontmatter.title}
